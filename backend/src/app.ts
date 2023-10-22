@@ -1,21 +1,27 @@
 import "dotenv/config";
 import express, { NextFunction, Request, Response } from "express";
 import morgan from "morgan";
+import documentRoutes from "./routes/document";
+import alertRoutes from "./routes/alert";
 import createHttpError, {isHttpError} from "http-errors";
 
+const cors = require("cors");
 const app = express();
+
+app.use(cors({
+    origin: '*'
+}))
 
 app.use(morgan('dev'));
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
-    res.send('Hello ,world!!')
-});
+app.use("/api/document", documentRoutes);
+app.use("/api/alert", alertRoutes);
 
 app.use((req, res, next) => {
     next(createHttpError(404, "Endpoint not found"));
-  });
+});
   
 //make sure this is after the app, because it is useing next() for the error handling
 //make sure the Request is from the express package
