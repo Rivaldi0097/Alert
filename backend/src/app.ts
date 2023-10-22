@@ -10,7 +10,7 @@ const app = express();
 
 app.use(cors({
     origin: '*',
-    allowedHeaders: ['Content-Type']
+    allowedHeaders: ['Content-Type', 'Access-Control-Allow-Headers']
 }))
 
 app.use(morgan('dev'));
