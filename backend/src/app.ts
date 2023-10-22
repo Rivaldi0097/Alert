@@ -11,7 +11,7 @@ const app = express();
 app.use(cors({
     origin: process.env.ENVIRONMENT === 'development' ? 'http://localhost:5003' : ['alert-frontend-theta.vercel.app', 'https://alert-frontend-rivaldi0097.vercel.app'],
     methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH', 'OPTIONS'],
-    allowedHeaders: ['Content-Type']
+    allowedHeaders: ['Content-Type', 'Origin']
 }))
 
 app.use(morgan('dev'));
