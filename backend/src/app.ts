@@ -9,7 +9,8 @@ const cors = require("cors");
 const app = express();
 
 app.use(cors({
-    origin: '*',
+    origin: ['alert-frontend-theta.vercel.app', 'https://alert-frontend-rivaldi0097.vercel.app'],
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Access-Control-Allow-Headers']
 }))
 
