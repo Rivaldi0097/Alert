@@ -57,7 +57,6 @@ interface attributeCheckProps{
 export const checkAttributes = ({attributesList, details}:attributeCheckProps):{name:string, value:string}[] | []  => {
     
     if(details.length < 0 || attributesList.length < 0){
-        //console.log("Either attributes or details are empty")
         return []
 
     }else{
@@ -75,8 +74,6 @@ export const checkAttributes = ({attributesList, details}:attributeCheckProps):{
                 }
             }
         }
-
-        //console.log("Found attributes: ", output)
         return output;
     }
     

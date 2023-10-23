@@ -36,8 +36,7 @@ export const createDocument: RequestHandler<unknown, unknown, createDocument, un
 
         //check the document against all alerts
         for(let alert of alertList){
-            //console.log(alert)
-            console.log(`------------------------------${alert.name}--------------------------------------`)
+ 
             const keywordList = alert.keywords;
             const locationList = alert.locations;
             const attributesList = alert.attributes;
@@ -50,10 +49,6 @@ export const createDocument: RequestHandler<unknown, unknown, createDocument, un
 
             //check if document detaials is part of alert attribute
             const foundAttribute = DocumentChecker.checkAttributes({attributesList, details})
-
-            console.log("found keywords: ", foundKeywords)
-            console.log("found location: ", foundLocation)
-            console.log("found attributes:", foundAttribute)
             
             //only push if at least one of the list has returned value
             if(!(foundKeywords.length === 0 && foundLocation.length === 0 && foundAttribute.length === 0)){
