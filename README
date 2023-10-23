@@ -1,0 +1,15 @@
+Steps for setting up the system:
+
+1. Clone this repository to local machine
+
+2. Open up your IDE's terminal and type the following commands (assuming you have installed NodeJs):
+  - cd backend
+  - npm i
+
+3. Please add an .env file to the root directory. The following variable should be added to your .env file:
+  - MONGO_CONNECTION_STRING= Your mongodb connection string
+  - PORT=3005 --> NOTE: you can choose other port number
+  - ENVIRONMENT=development
+
+4. After insalling all the dependencies and .env, run this command:
+  - npm start
